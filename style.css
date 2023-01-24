@@ -1,0 +1,179 @@
+body{
+    background-color: rgb(10, 10, 10);
+    font-family:'Bangers', cursive;
+    background-image: url(./imgs/Captura\ de\ Tela\ \(15\).png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+#container{
+    max-width: 350px;
+    height: 650px;
+    background-color: rgba(61, 61, 61, 0.816);
+    margin: auto;
+    position: relative;
+    border-radius: 10px;
+
+}
+
+.horario{
+   
+    display: inline;
+    width: 200px;
+    text-align: center;
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+}
+p{
+    display: inline;
+}
+
+.dia{
+    font-size: 20px;
+    
+}
+
+.hora{
+    
+    font-size:50px;
+    text-align: center;
+}
+
+.poster{
+    width: 250px;
+    height: 250px;
+    position: absolute;
+    top: 18%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-size: auto;
+    
+    
+}
+
+.controls{
+    width: 300px;
+    height: 110px;
+    background-color:rgba(67, 67, 67, 0.686) ;
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50% ,-75%);
+    border-radius: 10px;
+    text-align: center;
+    margin-top: 15px;
+
+}
+
+.btn{
+    width: 60px;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    padding-bottom: 15px;
+}
+
+.btn_mute{
+   position: absolute;
+   top: 82%;
+   left: 20%;
+   
+}
+
+.btn_volume{
+    position: absolute;
+    top: 81%;
+    left: 76%;
+    
+ }
+
+.duracao{
+    width:235px ;
+    height: 20px;
+    background-color:rgba(67, 67, 67, 0.686);
+    position: absolute;
+    top: 85% ;
+    left: 50%;
+    transform: translate(-50% , -300%);
+    border-radius: 10px;
+ 
+}
+
+progress{
+    height: 35px;
+    width: 0%;
+    position: absolute;
+    top: 11%;
+    transform: translateY(-27%);
+}
+
+#pause{
+    display: none;
+}
+
+
+
+.description{
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    width: 100%;
+    
+    transform: translateX(-50%);
+    color: white;
+    text-align: center;
+    margin-bottom: 5px;
+    
+}
+.cantor{
+    font-size: 20px;
+}
+
+.music{
+    font-size: 35px;
+}
+
+
+
+.inicio{
+    font-size:15px;
+    color: white;
+    position: absolute;
+    top:76%;
+    left: 7%;
+}
+
+.fim{
+    font-size:15px;
+    color: white;
+    position: absolute;
+    top: 76%;
+    left: 85%;
+}
+
+
+#barraVol{
+    -webkit-appearance:none;
+    background: #d3d3d3;
+    outline: none;
+    height: 3px;
+    width: 45%;
+    border-radius: 8px;
+    position: absolute;
+    top: 85%;
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+}
+#barraVol::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #005c5c;
+}
