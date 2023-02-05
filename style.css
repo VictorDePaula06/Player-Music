@@ -94,10 +94,10 @@ p{
 
 .duracao{
     width:235px ;
-    height: 20px;
+    height: 6px;
     background-color:rgba(67, 67, 67, 0.686);
     position: absolute;
-    top: 85% ;
+    top: 80% ;
     left: 50%;
     transform: translate(-50% , -300%);
     border-radius: 10px;
@@ -105,7 +105,7 @@ p{
 }
 
 progress{
-    height: 35px;
+    height: 10px;
     width: 0%;
     position: absolute;
     top: 11%;
@@ -123,7 +123,6 @@ progress{
     top: 60%;
     left: 50%;
     width: 100%;
-    
     transform: translateX(-50%);
     color: white;
     text-align: center;
@@ -141,7 +140,7 @@ progress{
 
 
 .inicio{
-    font-size:15px;
+    font-size:18px;
     color: white;
     position: absolute;
     top:76%;
@@ -149,7 +148,7 @@ progress{
 }
 
 .fim{
-    font-size:15px;
+    font-size:18px;
     color: white;
     position: absolute;
     top: 76%;
