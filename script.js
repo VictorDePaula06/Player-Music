@@ -31,86 +31,95 @@ let dataDia = document.getElementsByClassName("dataDia")[0];
 let mes = document.getElementsByClassName("mes")[0];
 
 // atualizar Dia e data
-var horaAtual = new Date();
-var d = horaAtual.getDay()
-var data = horaAtual.getDate()
-var meses = horaAtual.getMonth()
 
-switch(d){
-    case 0 :
-        diaSemana.innerHTML = "Domingo"
-         break
-    case 1 :
-        diaSemana.innerHTML = "Segunda-Feira"
-        break
-    case 2 : 
-        diaSemana.innerHTML = "Terça-Feira"  
-        break
-    case 3 :
-        diaSemana.innerHTML = "Quarta-Feira"
-        break
-    case 4 :
-        diaSemana.innerHTML = "Quinta-Feira"
-        break
-    case 5 :
-        diaSemana.innerHTML = "Sexta-Feira"
-        break
-    case 6 :
-        diaSemana.innerHTML = "Sábado"
-        break  
-}
 
-dataDia.innerHTML = ", " + data + " de " ;
+function tick(){
 
-switch(meses){
+  var horaAtual = new Date();
+  var d = horaAtual.getDay()
+  var data = horaAtual.getDate()
+  var meses = horaAtual.getMonth()
+
+
+  switch(d){
       case 0 :
-        mes.innerHTML = "Janeiro"
-      break  
+          diaSemana.innerHTML = "Domingo"
+           break
       case 1 :
-        mes.innerHTML = "Fevereiro"
-      break 
-      case 2 :
-        mes.innerHTML = "Março"
-      break  
+          diaSemana.innerHTML = "Segunda-Feira"
+          break
+      case 2 : 
+          diaSemana.innerHTML = "Terça-Feira"  
+          break
       case 3 :
-        mes.innerHTML = "Abril"
-      break  
+          diaSemana.innerHTML = "Quarta-Feira"
+          break
       case 4 :
-        mes.innerHTML = "Maio"
-      break  
+          diaSemana.innerHTML = "Quinta-Feira"
+          break
       case 5 :
-        mes.innerHTML = "Junho"
-      break  
+          diaSemana.innerHTML = "Sexta-Feira"
+          break
       case 6 :
-        mes.innerHTML = "Julho"
-      break  
-      case 7 :
-        mes.innerHTML = "Agosto"
-      break  
-      case 8 :
-        mes.innerHTML = "Setembro"
-      break  
-      case 9 :
-        mes.innerHTML = "Outubro"
-      break  
-      case 10 :
-        mes.innerHTML = "Novembro"
-      break  
-      case 11 :
-        mes.innerHTML = "Dezembro"
-      break   
+          diaSemana.innerHTML = "Sábado"
+          break  
+  }
+  
+  dataDia.innerHTML = ", " + data + " de " ;
+  
+  switch(meses){
+        case 0 :
+          mes.innerHTML = "Janeiro"
+        break  
+        case 1 :
+          mes.innerHTML = "Fevereiro"
+        break 
+        case 2 :
+          mes.innerHTML = "Março"
+        break  
+        case 3 :
+          mes.innerHTML = "Abril"
+        break  
+        case 4 :
+          mes.innerHTML = "Maio"
+        break  
+        case 5 :
+          mes.innerHTML = "Junho"
+        break  
+        case 6 :
+          mes.innerHTML = "Julho"
+        break  
+        case 7 :
+          mes.innerHTML = "Agosto"
+        break  
+        case 8 :
+          mes.innerHTML = "Setembro"
+        break  
+        case 9 :
+          mes.innerHTML = "Outubro"
+        break  
+        case 10 :
+          mes.innerHTML = "Novembro"
+        break  
+        case 11 :
+          mes.innerHTML = "Dezembro"
+        break   
+  }
+
+  //atualizar Horário
+
+  var hor = horaAtual.getHours()
+  var min = horaAtual.getMinutes()
+
+  if(min >= 10){
+      hora.innerHTML = hor + ":" + min
+  }else{
+      hora.innerHTML = hor + ":" + "0" + min
+  }
+
 }
 
-
-//atualizar Horário
-var hor = horaAtual.getHours()
-var min = horaAtual.getMinutes()
-
-if(min > 10){
-    hora.innerHTML = hor + ":" + min
-}else{
-    hora.innerHTML = hor + ":" + "0" + min
-}
+setInterval(tick,1000)
 
 duracao_musica.innerHTML = segundosParaMin(Math.floor(musica.duration))
 
