@@ -21,6 +21,7 @@ let button_musicaAnterior = document.getElementsByClassName("btn")[0]
 let button_play = document.getElementsByClassName("btn")[1];
 let button_pause = document.getElementsByClassName("btn")[2];
 let button_proxMusica = document.getElementsByClassName("btn")[3];
+let inicio_musica = document.getElementsByClassName("inicio")[0]
 let duracao_musica = document.getElementsByClassName("fim")[0];
 let nomeMusica = document.getElementsByClassName("music")[0];
 let nomeArtista = document.getElementsByClassName("cantor")[0];
@@ -35,10 +36,12 @@ let mes = document.getElementsByClassName("mes")[0];
 
 function tick(){
 
-  var horaAtual = new Date();
-  var d = horaAtual.getDay()
-  var data = horaAtual.getDate()
-  var meses = horaAtual.getMonth()
+  let horaAtual = new Date();
+  let d = horaAtual.getDay()
+  let data = horaAtual.getDate()
+  let meses = horaAtual.getMonth()
+
+  
 
 
   switch(d){
@@ -108,8 +111,8 @@ function tick(){
 
   //atualizar Horário
 
-  var hor = horaAtual.getHours()
-  var min = horaAtual.getMinutes()
+  let hor = horaAtual.getHours()
+  let min = horaAtual.getMinutes()
 
   if(min >= 10){
       hora.innerHTML = hor + ":" + min
@@ -121,7 +124,7 @@ function tick(){
 
 setInterval(tick,1000)
 
-duracao_musica.innerHTML = segundosParaMin(Math.floor(musica.duration))
+
 
 // eventos
 
@@ -154,9 +157,6 @@ button_proxMusica.addEventListener("click", () => {
 });
 
 
-
-
-
 // funções
 
 
@@ -167,6 +167,7 @@ function renderizarMusica(index){
         nomeArtista.innerHTML = musicas[index].artista
         image.src = musicas[index].img
         duracao_musica.innerHTML = segundosParaMin(Math.floor(musica.duration))
+
     });
 
 }
@@ -176,17 +177,15 @@ function play(){
     musica.play();
     button_play.style.display = "none"
     button_pause.style.display = "inline"
-    
+    duracao_musica.innerHTML = segundosParaMin(Math.floor(musica.duration))
 
-   
 }
 
 function pause(){
     musica.pause();
     button_pause.style.display = "none"
     button_play.style.display = "inline"
-
-    
+ 
 }
 
 function atualizar_barra(){
@@ -201,8 +200,7 @@ function segundosParaMin(segundos){
     let campoMinutos = Math.floor(segundos / 60);
     let campoSegundos = segundos % 60;
     if (campoSegundos < 10){
-        campoSegundos = "0" + campoSegundos;
-        
+        campoSegundos = "0" + campoSegundos;  
     }
     return campoMinutos + ":" + campoSegundos;
 }
