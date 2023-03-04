@@ -6,6 +6,7 @@ body{
     background-repeat: no-repeat;
     background-size: contain;
 }
+
 #container{
     max-width: 350px;
     height: 650px;
@@ -13,7 +14,6 @@ body{
     margin: auto;
     position: relative;
     border-radius: 10px;
-
 }
 
 .horario{
@@ -27,6 +27,7 @@ body{
     transform: translateX(-50%);
     color: white;
 }
+
 p{
     display: inline;
 }
@@ -48,8 +49,6 @@ p{
     left: 50%;
     transform: translateX(-50%);
     background-size: auto;
-    
-    
 }
 
 .controls{
@@ -63,7 +62,6 @@ p{
     border-radius: 10px;
     text-align: center;
     margin-top: 15px;
-
 }
 
 .btn{
@@ -79,14 +77,12 @@ p{
    position: absolute;
    top: 82%;
    left: 20%;
-   
 }
 
 .btn_volume{
     position: absolute;
     top: 81%;
     left: 76%;
-    
  }
 
 .duracao{
@@ -98,7 +94,6 @@ p{
     left: 50%;
     transform: translate(-50% , -300%);
     border-radius: 10px;
- 
 }
 
 progress{
@@ -113,8 +108,6 @@ progress{
     display: none;
 }
 
-
-
 .description{
     position: absolute;
     top: 60%;
@@ -123,8 +116,12 @@ progress{
     transform: translateX(-50%);
     color: white;
     text-align: center;
-    margin-bottom: 5px;
-    
+    margin-bottom: 5px;   
+}
+
+a{
+    text-decoration: none;
+    color: white;
 }
 .cantor{
     font-size: 20px;
@@ -133,8 +130,6 @@ progress{
 .music{
     font-size: 35px;
 }
-
-
 
 .inicio{
     font-size:18px;
@@ -152,7 +147,6 @@ progress{
     left: 85%;
 }
 
-
 #barraVol{
     -webkit-appearance:none;
     background: #d3d3d3;
@@ -166,6 +160,7 @@ progress{
     transform: translateX(-50%);
     cursor: pointer;
 }
+
 #barraVol::-webkit-slider-thumb{
     -webkit-appearance: none;
     appearance: none;
