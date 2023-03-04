@@ -2,14 +2,15 @@
 //Playlist
 
 let musicas = [
-    {titulo:'No Angels', artista:"The Blue Stones", src:"./music/No Angels.mp3",img:"./imgs/tBStones.jpg"},
-    {titulo:'Just Wanna Rock', artista:"Lil Uzi Vert", src:"./music/Just Wanna Rock.mp3",img:"./imgs/logo.jpg"},
-    {titulo:'Sacrifice', artista:"The Weeknd", src:"./music/Sacrifice.mp3",img:"./imgs/theWeeknd.jpeg"},
-    {titulo:'Me perdoa', artista:"Ferrugem e Iza", src:"./music/Me perdoa.mp3",img:"./imgs/me perdoa.jpeg"},
-    {titulo:'Senhor do tempo', artista:"Charlie Brown Jr", src:"./music/Senhor Do Tempo.mp3",img:"./imgs/senhor do tempo.jpg"},
-    {titulo:'Champanhe e Água Benta', artista:"Charlie Brown Jr", src:"./music/Champanhe E Água Benta.mp3",img:"./imgs/Champanhe.jpg"}
-
+  {titulo:'Senhor do tempo', artista:"Charlie Brown Jr", src:"./music/Senhor Do Tempo.mp3",img:"./imgs/senhor do tempo.jpg", artistaLink:"https://open.spotify.com/artist/1on7ZQ2pvgeQF4vmIA09x5"},
+  {titulo:'keep moving', artista:"The Jungle", src:"./music/keep moving.mp3",img:"./imgs/the jungle.jpg", artistaLink:"https://open.spotify.com/artist/59oA5WbbQvomJz2BuRG071"},
+  {titulo:'Listen', artista:"Beyoncé", src:"./music/Listen.mp3",img:"./imgs/Beyoncé.jpg", artistaLink:"https://open.spotify.com/artist/6vWDO969PvNqNYHIOW5v0m"},
+  {titulo:'Home', artista:"Ocean Alley", src:"./music/home.mp3",img:"./imgs/ocean alley.jpg", artistaLink:"https://open.spotify.com/artist/18lpwfiys4GtdHWNUu9qQr"},
+  {titulo:'No Angels', artista:"The Blue Stones", src:"./music/No Angels.mp3",img:"./imgs/tBStones.jpg", artistaLink:"https://open.spotify.com/artist/5VPCIIfZPK8KPsgz4jmOEC"},
+  {titulo:'Sacrifice', artista:"The Weeknd", src:"./music/Sacrifice.mp3",img:"./imgs/theWeeknd.jpeg", artistaLink:"https://open.spotify.com/artist/1Xyo4u8uXC1ZmMpatF05PJ?si=BbPvx0ewSx-HG1CDjHc4KA"},
+  {titulo:'Champanhe e Água Benta', artista:"Charlie Brown Jr", src:"./music/Champanhe E Água Benta.mp3",img:"./imgs/Champanhe.jpg", artistaLink:"https://open.spotify.com/artist/1on7ZQ2pvgeQF4vmIA09x5"}
 ];
+
 
 
 // variaveis
@@ -134,7 +135,7 @@ musica.addEventListener('timeupdate',atualizar_barra);
 button_musicaAnterior.addEventListener("click" , () => {
     indexMusica --
     if(indexMusica < 0){
-        indexMusica = 5;
+        indexMusica = 6;
     }
     renderizarMusica(indexMusica);
     musica.play()
@@ -146,7 +147,7 @@ button_musicaAnterior.addEventListener("click" , () => {
 // Botão para avançar a próxima Música
 button_proxMusica.addEventListener("click", () => {
    indexMusica ++
-   if(indexMusica > 5){
+   if(indexMusica > 6){
     indexMusica = 0;
    }
    renderizarMusica(indexMusica);
@@ -165,8 +166,10 @@ function renderizarMusica(index){
     musica.addEventListener("loadeddata",() => {
         nomeMusica.innerHTML = musicas[index].titulo;
         nomeArtista.innerHTML = musicas[index].artista
+        nomeArtista.innerHTML = `<a href="${musicas[index].artistaLink}" target="_blank">${musicas[index].artista}</a>`;
         image.src = musicas[index].img
         duracao_musica.innerHTML = segundosParaMin(Math.floor(musica.duration))
+        
 
     });
 
