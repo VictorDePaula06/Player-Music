@@ -2,13 +2,12 @@
 //Playlist
 
 let musicas = [
-  {titulo:'Senhor do tempo', artista:"Charlie Brown Jr", src:"./music/Senhor Do Tempo.mp3",img:"./imgs/senhor do tempo.jpg", artistaLink:"https://open.spotify.com/artist/1on7ZQ2pvgeQF4vmIA09x5"},
-  {titulo:'keep moving', artista:"The Jungle", src:"./music/keep moving.mp3",img:"./imgs/the jungle.jpg", artistaLink:"https://open.spotify.com/artist/59oA5WbbQvomJz2BuRG071"},
-  {titulo:'Listen', artista:"Beyoncé", src:"./music/Listen.mp3",img:"./imgs/Beyoncé.jpg", artistaLink:"https://open.spotify.com/artist/6vWDO969PvNqNYHIOW5v0m"},
-  {titulo:'Home', artista:"Ocean Alley", src:"./music/home.mp3",img:"./imgs/ocean alley.jpg", artistaLink:"https://open.spotify.com/artist/18lpwfiys4GtdHWNUu9qQr"},
-  {titulo:'No Angels', artista:"The Blue Stones", src:"./music/No Angels.mp3",img:"./imgs/tBStones.jpg", artistaLink:"https://open.spotify.com/artist/5VPCIIfZPK8KPsgz4jmOEC"},
-  {titulo:'Sacrifice', artista:"The Weeknd", src:"./music/Sacrifice.mp3",img:"./imgs/theWeeknd.jpeg", artistaLink:"https://open.spotify.com/artist/1Xyo4u8uXC1ZmMpatF05PJ?si=BbPvx0ewSx-HG1CDjHc4KA"},
-  {titulo:'Champanhe e Água Benta', artista:"Charlie Brown Jr", src:"./music/Champanhe E Água Benta.mp3",img:"./imgs/Champanhe.jpg", artistaLink:"https://open.spotify.com/artist/1on7ZQ2pvgeQF4vmIA09x5"}
+  {titulo:'Senhor do tempo', artista:"Charlie Brown Jr",spot:"./imgs/spotify.png", src:"./music/Senhor Do Tempo.mp3",img:"./imgs/senhor do tempo.jpg", artistaLink:"https://open.spotify.com/artist/1on7ZQ2pvgeQF4vmIA09x5"},
+  {titulo:'keep moving', artista:"The Jungle",spot:"./imgs/spotify.png", src:"./music/keep moving.mp3",img:"./imgs/the jungle.jpg", artistaLink:"https://open.spotify.com/artist/59oA5WbbQvomJz2BuRG071"},
+  {titulo:'Home', artista:"Ocean Alley",spot:"./imgs/spotify.png", src:"./music/home.mp3",img:"./imgs/ocean alley.jpg", artistaLink:"https://open.spotify.com/artist/18lpwfiys4GtdHWNUu9qQr"},
+  {titulo:'No Angels', artista:"The Blue Stones",spot:"./imgs/spotify.png", src:"./music/No Angels.mp3",img:"./imgs/tBStones.jpg", artistaLink:"https://open.spotify.com/artist/5VPCIIfZPK8KPsgz4jmOEC"},
+  {titulo:'Sacrifice', artista:"The Weeknd",spot:"./imgs/spotify.png", src:"./music/Sacrifice.mp3",img:"./imgs/theWeeknd.jpeg", artistaLink:"https://open.spotify.com/artist/1Xyo4u8uXC1ZmMpatF05PJ?si=BbPvx0ewSx-HG1CDjHc4KA"},
+  {titulo:'Champanhe e Água Benta', artista:"Charlie Brown Jr",spot:"./imgs/spotify.png", src:"./music/Champanhe E Água Benta.mp3",img:"./imgs/Champanhe.jpg", artistaLink:"https://open.spotify.com/artist/1on7ZQ2pvgeQF4vmIA09x5"}
 ];
 
 
@@ -26,6 +25,7 @@ let inicio_musica = document.getElementsByClassName("inicio")[0]
 let duracao_musica = document.getElementsByClassName("fim")[0];
 let nomeMusica = document.getElementsByClassName("music")[0];
 let nomeArtista = document.getElementsByClassName("cantor")[0];
+let iconSpotify = document.getElementsByClassName("link_spotify")[0]
 let barraVolume = document.getElementById("barraVol");
 let diaSemana = document.getElementsByClassName("diaSemana")[0];
 let hora = document.getElementsByClassName("hora")[0];
@@ -135,7 +135,7 @@ musica.addEventListener('timeupdate',atualizar_barra);
 button_musicaAnterior.addEventListener("click" , () => {
     indexMusica --
     if(indexMusica < 0){
-        indexMusica = 6;
+        indexMusica = 5;
     }
     renderizarMusica(indexMusica);
     musica.play()
@@ -147,7 +147,7 @@ button_musicaAnterior.addEventListener("click" , () => {
 // Botão para avançar a próxima Música
 button_proxMusica.addEventListener("click", () => {
    indexMusica ++
-   if(indexMusica > 6){
+   if(indexMusica > 5){
     indexMusica = 0;
    }
    renderizarMusica(indexMusica);
@@ -165,9 +165,10 @@ function renderizarMusica(index){
     musica.setAttribute("src", musicas[index].src);
     musica.addEventListener("loadeddata",() => {
         nomeMusica.innerHTML = musicas[index].titulo;
-        nomeArtista.innerHTML = musicas[index].artista
+        nomeArtista.innerHTML = musicas[index].artista;
         nomeArtista.innerHTML = `<a href="${musicas[index].artistaLink}" target="_blank">${musicas[index].artista}</a>`;
-        image.src = musicas[index].img
+        iconSpotify.src = musicas[index].spot;
+        image.src = musicas[index].img;
         duracao_musica.innerHTML = segundosParaMin(Math.floor(musica.duration))
         
 
